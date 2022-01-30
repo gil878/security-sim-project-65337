@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{% block content %}
+{%load static%}
+    <div class="border rounded-3 m-5 p-3">
+        <h2 class="h2 mb-4">New User Register</h2>
+        <form action="" method="POST">{% csrf_token %}
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Username</span>
+            <input name='username' id="usernameInput" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+            <input name='email' id="emailInput" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">password</span>
+            <input name='password' id="passwordInput" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">repeat password</span>
+            <input name='reg_repeat_field' id="repeatInput" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <button type="submit" class="btn btn-primary">Confirm</button>
+        </form>
+    </div>
+    <p>{{messege}}</p>
+</body>
+<script src="{% static 'js/register_page_logic.js' %}"></script>
+{%endblock%}

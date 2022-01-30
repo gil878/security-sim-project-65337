@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+  {% block content %}
+    {%load static%} 
+    <div class="border rounded-3 m-5 p-3">
+      <form action="" method="POST">{% csrf_token %}
+          <div class="mb-3 row">
+            <label for="newPass1" class="col-sm-2 col-form-label">Enter new Password</label>
+            <div class="col-sm-10">
+              <input name='password' type="password" class="form-control">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="newPass2" class="col-sm-2 col-form-label">Enter again</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" name="newPass2">
+            </div>
+          </div>
+          <input id="confirmBtn" type="submit" class="btn btn-primary" value='Confirm'>
+        </form>
+    </div>
+    <p>{{messege}}</p>
+    <script src="{% static 'js/change_password_logic.js' %}"></script>
+    {%endblock%}
